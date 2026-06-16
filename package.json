@@ -1,0 +1,49 @@
+{
+  "name": "docuchat",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "type-check": "tsc --noEmit",
+    "create-index": "ts-node --project tsconfig.scripts.json scripts/create-index.ts"
+  },
+  "dependencies": {
+    "@ai-sdk/openai": "0.0.36",
+    "@pinecone-database/pinecone": "2.2.2",
+    "@upstash/ratelimit": "1.2.1",
+    "@upstash/redis": "1.31.5",
+    "ai": "3.2.22",
+    "cheerio": "1.0.0-rc.12",
+    "langchain": "0.2.9",
+    "@langchain/core": "0.2.15",
+    "@langchain/openai": "0.1.3",
+    "langfuse": "3.8.1",
+    "mammoth": "1.7.2",
+    "next": "14.2.5",
+    "openai": "4.47.1",
+    "p-limit": "5.0.0",
+    "p-retry": "6.2.0",
+    "pdf-parse": "1.1.1",
+    "react": "^18",
+    "react-dom": "^18",
+    "zod": "3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/pdf-parse": "^1.1.4",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@vitest/coverage-v8": "^1.6.0",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "msw": "2.3.1",
+    "typescript": "^5",
+    "vitest": "^1.6.0"
+  }
+}

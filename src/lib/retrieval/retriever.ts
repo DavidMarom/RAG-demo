@@ -32,7 +32,7 @@ export async function retrieve(
     useMMR = false,
     mmrLambda = 0.7,
     filter,
-    minScore = 0.5,
+    minScore = 0.2,
   } = options;
 
   // 1. Embed the query

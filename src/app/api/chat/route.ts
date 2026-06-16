@@ -7,7 +7,7 @@ import { generateStreamingResponse } from '@/lib/generation/generator';
 import { checkRateLimit } from '@/lib/ratelimit';
 
 const ChatRequestSchema = z.object({
-  query: z.string().min(1).max(1000),
+  messages: z.array(z.object({ role: z.string(), content: z.string() })).min(1),
   department: z.string().optional(),
 });
 
@@ -41,7 +41,11 @@ export async function POST(request: NextRequest) {
     return new Response('Invalid request body', { status: 400 });
   }
 
-  const { query, department } = body;
+  const { messages, department } = body;
+  const lastUserMessage = messages.findLast((m) => m.role === 'user');
+  if (!lastUserMessage) return new Response('No user message', { status: 400 });
+  const query = lastUserMessage.content.trim().slice(0, 1000);
+  if (!query) return new Response('Empty query', { status: 400 });
 
   try {
     // 3. Retrieval
@@ -66,7 +70,7 @@ export async function POST(request: NextRequest) {
       }))
     );
 
-    return stream.toDataStreamResponse({
+    return stream.toAIStreamResponse({
       headers: { 'X-Sources': sourcesHeader },
     });
   } catch (error) {

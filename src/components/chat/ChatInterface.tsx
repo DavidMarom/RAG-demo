@@ -3,6 +3,7 @@
 
 import { useChat } from 'ai/react';
 import { useState, useRef, useEffect } from 'react';
+import Link from 'next/link';
 import { MessageList } from './MessageList';
 import { SourceCitations } from './SourceCitations';
 
@@ -57,7 +58,13 @@ export function ChatInterface() {
             Ask questions about the organizational knowledge base
           </p>
         </div>
-        <div>
+        <div className="flex items-center gap-2">
+          <Link
+            href="/upload"
+            className="text-sm border rounded-lg px-3 py-1.5 hover:bg-gray-50 transition-colors"
+          >
+            Upload docs
+          </Link>
           <select
             value={department}
             onChange={(e) => setDepartment(e.target.value)}

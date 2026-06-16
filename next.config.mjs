@@ -1,6 +1,5 @@
-import type { NextConfig } from 'next';
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   // Enable strict mode for React
   reactStrictMode: true,
   // Opt server-only packages out of the browser bundle

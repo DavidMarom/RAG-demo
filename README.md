@@ -2,7 +2,7 @@
 
 Live demo: [https://rag-demo-woad.vercel.app/](https://rag-demo-woad.vercel.app/)
 
-Link to guide + presentation: [https://drive.google.com/drive/folders/1L3_VOZNT59jmHwiM9x_EZuLe73MrVLli?usp=sharing](Here)
+Link to guide + presentation: [Here](https://drive.google.com/drive/folders/1L3_VOZNT59jmHwiM9x_EZuLe73MrVLli?usp=sharing)
 
 A full-stack Retrieval-Augmented Generation (RAG) application built with Next.js 14, OpenAI, and Pinecone. Upload your documents, ask questions in natural language, and get answers grounded in your own knowledge base - with cited sources.
 

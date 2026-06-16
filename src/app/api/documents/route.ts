@@ -28,7 +28,7 @@ export async function GET() {
 
     do {
       const page = await index.listPaginated({ paginationToken, limit: 100 });
-      const ids = page.vectors?.map((v) => v.id) ?? [];
+      const ids = (page.vectors?.map((v) => v.id) ?? []).filter((id): id is string => id !== undefined);
       allIds.push(...ids);
       paginationToken = page.pagination?.next;
     } while (paginationToken);
